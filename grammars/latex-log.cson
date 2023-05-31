@@ -1,3 +1,4 @@
+scopeName: "text.log.latex"
 firstLineMatch: "This is (pdf|pdfe)?TeXk?, Version "
 name: "LaTeX Log"
 patterns: [
@@ -72,4 +73,3 @@ patterns: [
     ]
   }
 ]
-scopeName: "text.log.latex"

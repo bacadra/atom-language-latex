@@ -1,5 +1,12 @@
+scopeName: "text.tex.latex"
 fileTypes: [
-  "tex"
+  'bbx'
+  'cbx'
+  'cls'
+  'lco'
+  'sty'
+  'tex'
+  'tikz'
 ]
 firstLineMatch: "^\\\\documentclass(?!.*\\{beamer\\})"
 name: "LaTeX"
@@ -74,7 +81,7 @@ patterns: [
       					(\\[)([^\\[]*?)(\\])								# Optional Title
       				)??
       				(\\{)												# Opening Bracket
-      				
+
     '''
     beginCaptures:
       "1":
@@ -292,7 +299,7 @@ patterns: [
       						)
       					(\\})										# Close Bracket
       					(\\s*\\n)?				# Match to end of line absent of content
-      				
+
     '''
     captures:
       "1":
@@ -314,7 +321,7 @@ patterns: [
       						(\\4)				# Previous capture from begin
       					(\\})										# Close Bracket
       					(?:\\s*\\n)?				# Match to end of line absent of content
-      				
+
     '''
     name: "meta.function.environment.math.latex"
     patterns: [
@@ -332,7 +339,7 @@ patterns: [
       						(array|tabular[xy*]?)
       					(\\})										# Close Bracket
       					(\\s*\\n)?				# Match to end of line absent of content
-      				
+
     '''
     captures:
       "1":
@@ -354,7 +361,7 @@ patterns: [
       						(\\4)				# Previous capture from begin
       					(\\})										# Close Bracket
       					(?:\\s*\\n)?				# Match to end of line absent of content
-      				
+
     '''
     name: "meta.function.environment.tabular.latex"
     patterns: [
@@ -546,7 +553,7 @@ patterns: [
         name: "punctuation.definition.textit.begin.latex"
     comment: '''
       We put the keyword in a capture and name this capture, so that disabling spell checking for “keyword” won't be inherited by the argument to \\textit{...}.
-      
+
       Put specific matches for particular LaTeX keyword.functions before the last two more general functions
     '''
     contentName: "markup.italic.textit.latex"
@@ -625,7 +632,7 @@ patterns: [
       					(?:(\\[)[^\\]]*(\\]))?								# Optional
       					(?:(\\[)[^\\]]*(\\]))?								#   Arguments
       					(\\{)											# Opening Bracket
-      				
+
     '''
     captures:
       "1":
@@ -860,4 +867,3 @@ patterns: [
     include: "text.tex"
   }
 ]
-scopeName: "text.tex.latex"

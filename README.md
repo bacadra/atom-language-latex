@@ -15,13 +15,13 @@
   </a>
 </p>
 
-Syntax highlighting and Snippets for LaTeX. This package was derived from a TextMate bundle located at https://github.com/textmate/latex.tmbundle.
+Syntax highlighting and Snippets for LaTeX. This package was derived from a [TextMate-LaTeX](https://github.com/textmate/latex.tmbundle) bundle.
 
 ## Installation
 
 ### Atom Text Editor
 
-The official Atom packages store has been disabled. To get latest version run the shell command
+The official Atom packages store has been [disabled](https://github.blog/2022-06-08-sunsetting-atom/). To get latest version run the shell command
 
     apm install bacadra/atom-language-latex
 
@@ -33,7 +33,7 @@ The package has compability with [Pulsar](https://pulsar-edit.dev/) and can be i
 
     pulsar -p install bacadra/atom-language-latex
 
-or directly [language-latex](https://web.pulsar-edit.dev/packages/language-latex) from Pulsar package store.
+and obtain the package directly from Github repository.
 
 # Contributing
 

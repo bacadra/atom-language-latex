@@ -1,3 +1,4 @@
+scopeName: "text.tex.latex.memoir"
 fileTypes: []
 firstLineMatch: "^\\\\documentclass(\\[.*\\])?\\{memoir\\}"
 name: "LaTeX Memoir"
@@ -83,7 +84,7 @@ patterns: [
       					(\\[)([^\\[]*?)(\\])						# Options for TOC- and Header-Name
       				){0,2}?
       				(\\{)												  # Opening Bracket
-      				
+
     '''
     beginCaptures:
       "1":
@@ -115,4 +116,3 @@ patterns: [
     include: "text.tex.latex"
   }
 ]
-scopeName: "text.tex.latex.memoir"

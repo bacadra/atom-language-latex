@@ -1,8 +1,7 @@
+scopeName: "text.tex"
 fileTypes: [
-  "sty"
-  "cls"
-  "bbx"
-  "cbx"
+  "dtx"
+  "ins"
 ]
 name: "TeX"
 patterns: [
@@ -216,4 +215,3 @@ repository:
         name: "meta.placeholder.greek.math.tex"
       }
     ]
-scopeName: "text.tex"
