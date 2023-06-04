@@ -1,5 +1,6 @@
 scopeName: "text.log.latex"
 firstLineMatch: "This is (pdf|pdfe)?TeXk?, Version "
+injectionSelector: 'source.embedded.latex-log'
 name: "LaTeX Log"
 patterns: [
   {

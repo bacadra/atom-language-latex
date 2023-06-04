@@ -4,6 +4,7 @@ fileTypes: [
   "ins"
 ]
 name: "TeX"
+injectionSelector: 'source.embedded.tex'
 patterns: [
   {
     captures:

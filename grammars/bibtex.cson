@@ -9,6 +9,7 @@ fileTypes: [
   "bib"
 ]
 name: "BibTeX"
+injectionSelector: 'source.embedded.bibtex'
 patterns: [
   {
     begin: "@Comment"

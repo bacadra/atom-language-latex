@@ -1,6 +1,7 @@
 scopeName: "text.tex.latex.beamer"
 fileTypes: []
 firstLineMatch: "^\\\\documentclass(\\[.*\\])?\\{beamer\\}"
+injectionSelector: 'source.embedded.latex-beamer'
 name: "LaTeX Beamer"
 patterns: [
   {

@@ -1,6 +1,7 @@
 scopeName: "text.tex.latex.memoir"
 fileTypes: []
 firstLineMatch: "^\\\\documentclass(\\[.*\\])?\\{memoir\\}"
+injectionSelector: 'source.embedded.latex-memoir'
 name: "LaTeX Memoir"
 patterns: [
   {
