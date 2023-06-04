@@ -1,4 +1,5 @@
 scopeName: "text.tex.latex"
+name: "LaTeX"
 fileTypes: [
   'bbx'
   'cbx'
@@ -9,7 +10,8 @@ fileTypes: [
   'tikz'
 ]
 firstLineMatch: "^\\\\documentclass(?!.*\\{beamer\\})"
-name: "LaTeX"
+injectionSelector: 'source.embedded.latex'
+limitLineLength: false
 patterns: [
   {
     comment: "This scope identifies partially typed commands such as `\\tab`. We use this to trigger “Command Completion” only when it makes sense."
@@ -65,23 +67,9 @@ patterns: [
     ]
   }
   {
-    begin: '''
-      (?x)
-      				(													# Capture 1
-      					(\\\\)											# Marker
-      					(
-      						(?:sub){0,2}section							# Functions
-      					  | (?:sub)?paragraph
-      					  | chapter|part|addpart
-      					  | addchap|addsec|minisec
-      					)
-      					(?:\\*)?											# Optional Unnumbered
-      				)
-      				(?:
-      					(\\[)([^\\[]*?)(\\])								# Optional Title
-      				)??
-      				(\\{)												# Opening Bracket
-
+    begin: '''(?x)
+    ((\\\\)((?:sub){0,2}section|(?:sub)?paragraph|chapter|part|addpart|addchap|addsec|minisec)(?:\\*)?)
+		(?:(\\[)([^\\[]*?)(\\]))??(\\{)
     '''
     beginCaptures:
       "1":
@@ -286,20 +274,19 @@ patterns: [
   {
     begin: '''
       (?x)
-      					(?:\\s*)										# Optional whitespace
-      					((\\\\)begin)									# Marker - Function
-      					(\\{)										# Open Bracket
+      					(?:\\s*)
+      					((\\\\)begin)
+      					(\\{)
       						(
       							(?:
-      								align|equation|eqnarray			# Argument
+      								align|equation|eqnarray
       							  | multline|aligned|alignat
       							  | split|gather|gathered
       							)
-      							(?:\\*)?								# Optional Unnumbered
+      							(?:\\*)?
       						)
-      					(\\})										# Close Bracket
-      					(\\s*\\n)?				# Match to end of line absent of content
-
+      					(\\})
+      					(\\s*\\n)?
     '''
     captures:
       "1":
@@ -315,12 +302,12 @@ patterns: [
     contentName: "string.other.math.block.environment.latex"
     end: '''
       (?x)
-      					(?:\\s*)										# Optional whitespace
-      					((\\\\)end)									# Marker - Function
-      					(\\{)										# Open Bracket
-      						(\\4)				# Previous capture from begin
-      					(\\})										# Close Bracket
-      					(?:\\s*\\n)?				# Match to end of line absent of content
+      					(?:\\s*)
+      					((\\\\)end)
+      					(\\{)
+      						(\\4)
+      					(\\})
+      					(?:\\s*\\n)?
 
     '''
     name: "meta.function.environment.math.latex"
@@ -333,12 +320,12 @@ patterns: [
   {
     begin: '''
       (?x)
-      					(?:\\s*)										# Optional whitespace
-      					((\\\\)begin)									# Marker - Function
-      					(\\{)										# Open Bracket
+      					(?:\\s*)
+      					((\\\\)begin)
+      					(\\{)
       						(array|tabular[xy*]?)
-      					(\\})										# Close Bracket
-      					(\\s*\\n)?				# Match to end of line absent of content
+      					(\\})
+      					(\\s*\\n)?
 
     '''
     captures:
@@ -355,12 +342,12 @@ patterns: [
     contentName: "meta.data.environment.tabular.latex"
     end: '''
       (?x)
-      					(?:\\s*)										# Optional whitespace
-      					((\\\\)end)									# Marker - Function
-      					(\\{)										# Open Bracket
-      						(\\4)				# Previous capture from begin
-      					(\\})										# Close Bracket
-      					(?:\\s*\\n)?				# Match to end of line absent of content
+      					(?:\\s*)
+      					((\\\\)end)
+      					(\\{)
+      						(\\4)
+      					(\\})
+      					(?:\\s*\\n)?
 
     '''
     name: "meta.function.environment.tabular.latex"
@@ -623,15 +610,15 @@ patterns: [
     begin: '''
       (?x)
       					(
-      						(\\\\)										# Marker
-      						(?:auto|foot|full|no|short|[tT]ext)?		# Function Name
+      						(\\\\)
+      						(?:auto|foot|full|no|short|[tT]ext)?
       						[cC]ite
       						(?:al)?(?:t|p|author|year(?:par)?|title)?[ANP]*
-      						\\*?											# Optional Unabreviated
+      						\\*?
       					)
-      					(?:(\\[)[^\\]]*(\\]))?								# Optional
-      					(?:(\\[)[^\\]]*(\\]))?								#   Arguments
-      					(\\{)											# Opening Bracket
+      					(?:(\\[)[^\\]]*(\\]))?
+      					(?:(\\[)[^\\]]*(\\]))?
+      					(\\{)
 
     '''
     captures:
