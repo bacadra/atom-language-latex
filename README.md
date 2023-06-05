@@ -35,7 +35,7 @@ The package has compability with [Pulsar](https://pulsar-edit.dev/) and can be i
 
 and obtain the package directly from Github repository.
 
-# Contributing
+# Contributing [🍺](https://www.buymeacoffee.com/asiloisad)
 
 If you have ideas on how to improve the package, see bugs or want to support new features - feel free to share it via GitHub.
 
